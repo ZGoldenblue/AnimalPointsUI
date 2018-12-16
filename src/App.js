@@ -7,15 +7,14 @@ class App extends Component {
   render() {
     return (
       <div>
-        
-        <div className="container App-contentPane" >
         <nav className="navbar App-header">
           <a className="navbar-brand" href="/">
             <img src={logo} width="30" height="30" alt="Animal Points"/>
             Animal Points
           </a>
         </nav>
-        hello
+        <div className="container App-contentPane" >
+          hello
         </div>
       </div>
     );
