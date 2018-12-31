@@ -9,7 +9,7 @@ class App extends Component {
       <div>
         <nav className="navbar App-header">
           <a className="navbar-brand" href="/">
-            <img src={logo} width="30" height="30" alt="Animal Points"/>
+            <img src={logo} width="30" height="80" alt="Animal Points"/>
             Animal Points
           </a>
         </nav>
