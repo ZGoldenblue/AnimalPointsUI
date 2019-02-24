@@ -7,14 +7,6 @@
   height: 40vmin;
 }
 
-.App-header {
-  background-color: #054F15;
-}
-
-.App-link {
-  color: #80798a73;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
