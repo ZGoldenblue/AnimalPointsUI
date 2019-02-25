@@ -1,4 +1,8 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Alert from 'react-bootstrap/Alert';
+import Container from 'react-bootstrap/Container';
 import React, { Component } from 'react';
 import './App.css';
 
@@ -7,32 +11,28 @@ class App extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
-          <div className="container">
-            <div className="navbar-nav">        
-
-              <a className="navbar-brand" href="/">Animal Points</a>
-              <a className="nav-item nav-link" href="#home">Home</a>
-              <a className="nav-item nav-link" href="#teams">Teams</a>
-              <a className="nav-item nav-link" href="#help">Help</a>
-              <div className="dropdown">
-                {/*eslint-disable-next-line*/}
-                <a className="nav-item nav-link dropdown-toggle" 
-                data-toggle="dropdown" id="userDropdown"
-                aria-haspopup="true" aria-expanded="false"
-                href="#">User</a>
-                <div className="dropdown-menu" aria-labelledby="userDropdown">
-                  <a className="dropdown-item" href="#userProfile">Profile</a>
-                  <a className="dropdown-item" href="#userSettings">Settings</a>
-                  <a className="dropdown-item" href="#userLogOut">Log Out</a>
-                </div>
-              </div>
-            </div>  
-          </div>
-        </nav> {/*Navbar*/}
-        <div className="container App-contentPane" >
-            hello
-        </div>
+        <Navbar bg="dark" variant="dark" expand="sm">
+          <Container>
+            <Navbar.Brand href="#home">Animal Points</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="mr-auto">
+                <Nav.Link href="#link">Teams</Nav.Link>
+                <Nav.Link href="#link">About</Nav.Link>
+              </Nav>
+              <Nav>
+                <NavDropdown title="User" id="user-dropdown">
+                  <NavDropdown.Item href="#user/profile">Profile</NavDropdown.Item>
+                  <NavDropdown.Item href="#user/settings">Settings</NavDropdown.Item>
+                  <NavDropdown.Item href="#user/logout">Log Out</NavDropdown.Item>
+                </NavDropdown>
+              </Nav>
+          </Navbar.Collapse>
+          </Container>
+        </Navbar>
+        <Container>
+          <Alert variant='success'>Hello World!</Alert>
+        </Container>
       </div>
     );
   }
