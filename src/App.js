@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Alert from 'react-bootstrap/Alert';
 import Container from 'react-bootstrap/Container';
+import { Authenticator } from 'aws-amplify-react';
 import React, { Component } from 'react';
 import './App.css';
 
@@ -10,6 +11,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
+      <Authenticator>
       <div>
         <Navbar bg="dark" variant="dark" expand="sm">
           <Container>
@@ -17,8 +19,8 @@ class App extends Component {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link href="#link">Teams</Nav.Link>
-                <Nav.Link href="#link">About</Nav.Link>
+                <Nav.Link href="#teams">Teams</Nav.Link>
+                <Nav.Link href="#about">About</Nav.Link>
               </Nav>
               <Nav>
                 <NavDropdown title="User" id="user-dropdown">
@@ -34,6 +36,7 @@ class App extends Component {
           <Alert variant='success'>Hello World!</Alert>
         </Container>
       </div>
+      </Authenticator>
     );
   }
 }
