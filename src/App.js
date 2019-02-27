@@ -37,11 +37,9 @@ class App extends Component {
         switch (payload.event) {
           case 'signIn':
               this.setState({user: payload.data})
-              History.push("")
               break;
             case 'signOut':
                 this.setState({user: null})
-                History.push("")
                 break;
             default:
                 break;
