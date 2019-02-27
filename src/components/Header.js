@@ -7,16 +7,10 @@ import Container from 'react-bootstrap/Container';
 
 class Header extends Component {
 
-    constructor(props) {
-        super(props);
-        console.log(this.props.user)
-        this.state = {user: this.props.user};
-    }
-
     check_authentication() {
-        if(this.state.user) {
+        if(this.props.user) {
             return(
-                <NavDropdown title={this.state.user.username} id="user-dropdown">
+                <NavDropdown title={this.props.user.username} id="user-dropdown">
                     <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
                     <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
                     <NavDropdown.Item href="/signout">Sign Out</NavDropdown.Item>

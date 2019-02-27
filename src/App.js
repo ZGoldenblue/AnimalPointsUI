@@ -21,23 +21,22 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log();
     Auth.currentUserInfo()
     .then((value) => {
+        console.log(value)
         this.setState({user: value})
     });
 }
 
   onHubCapsule(capsule) {
-    console.log("Here")
+    console.log(capsule)
     // The Auth module will emit events when user signs in, signs out, etc
     const { channel, payload} = capsule;
     if (channel === 'auth') {
         switch (payload.event) {
           case 'signIn':
-              Auth.currentUserInfo()
-                .then((value) => {
-                  this.setState({user: value})
-                });
+              this.setState({user: payload.data})
               History.push("")
               break;
             case 'signOut':
