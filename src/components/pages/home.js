@@ -7,7 +7,7 @@ class home extends Component {
     render() {
         return (
             <Container>
-                <Alert variant='success'>Hello World!</Alert>
+                <Alert variant='success'>Home</Alert>
             </Container>
         );
     }
