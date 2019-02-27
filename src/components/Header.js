@@ -3,9 +3,32 @@ import React, { Component } from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import Container from 'react-bootstrap/Container'
+import Container from 'react-bootstrap/Container';
 
 class Header extends Component {
+
+    constructor(props) {
+        super(props);
+        console.log(this.props.user)
+        this.state = {user: this.props.user};
+    }
+
+    check_authentication() {
+        if(this.state.user) {
+            return(
+                <NavDropdown title={this.state.user.username} id="user-dropdown">
+                    <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+                    <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
+                    <NavDropdown.Item href="/signout">Sign Out</NavDropdown.Item>
+                </NavDropdown>
+            );
+        } else {
+            return(
+                <Nav.Link href="/signin">Sign In</Nav.Link>
+            );
+        }
+    }
+
     render() {
         return (
             <Navbar bg="dark" variant="dark" expand="sm">
@@ -18,11 +41,7 @@ class Header extends Component {
                             <Nav.Link href="/about">About</Nav.Link>
                         </Nav>
                         <Nav>
-                            <NavDropdown title="User" id="user-dropdown">
-                                <NavDropdown.Item href="/user/profile">Profile</NavDropdown.Item>
-                                <NavDropdown.Item href="/user/settings">Settings</NavDropdown.Item>
-                                <NavDropdown.Item href="/user/logout">Log Out</NavDropdown.Item>
-                            </NavDropdown>
+                            {this.check_authentication()}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
