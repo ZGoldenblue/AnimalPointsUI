@@ -5,20 +5,22 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Container from 'react-bootstrap/Container';
 
+import { Link } from 'react-router-dom';
+
 class Header extends Component {
 
     check_authentication() {
         if(this.props.user) {
             return(
                 <NavDropdown title={this.props.user.username} id="user-dropdown">
-                    <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-                    <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
-                    <NavDropdown.Item href="/signout">Sign Out</NavDropdown.Item>
+                    <Link className="dropdown-item" to="/profile">Profile</Link>
+                    <Link className="dropdown-item" to="/settings">Settings</Link>
+                    <Link className="dropdown-item" to="/signout">Sign Out</Link>
                 </NavDropdown>
             );
         } else {
             return(
-                <Nav.Link href="/signin">Sign In</Nav.Link>
+                <Link className="nav-item nav-link" to="/signin">Sign In</Link>
             );
         }
     }
@@ -27,12 +29,11 @@ class Header extends Component {
         return (
             <Navbar bg="dark" variant="dark" expand="sm">
                 <Container>
-                    <Navbar.Brand href="/">Animal Points</Navbar.Brand>
+                    <Link className="navbar-brand" to="/">Animal Points</Link>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="/teams">Teams</Nav.Link>
-                            <Nav.Link href="/about">About</Nav.Link>
+                            <Link className="nav-item nav-link" to="/about">About</Link>
                         </Nav>
                         <Nav>
                             {this.check_authentication()}
