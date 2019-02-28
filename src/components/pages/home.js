@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Alert from 'react-bootstrap/Alert';
 
-class home extends Component {
+class Home extends Component {
     render() {
         return (
             <Container>
@@ -13,4 +13,4 @@ class home extends Component {
     }
 }
 
-export default home;
+export default Home;

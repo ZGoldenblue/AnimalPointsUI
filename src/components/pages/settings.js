@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Alert from 'react-bootstrap/Alert';
 
-class settings extends Component {
+class Settings extends Component {
     render() {
         return (
             <Container>
@@ -13,4 +13,4 @@ class settings extends Component {
     }
 }
 
-export default settings;
+export default Settings;

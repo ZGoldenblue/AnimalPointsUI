@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Auth } from 'aws-amplify';
 
-class signout extends Component {
+class SignOut extends Component {
 
     render() {
         Auth.signOut();
@@ -13,4 +13,4 @@ class signout extends Component {
     }
 }
 
-export default signout;
+export default SignOut;

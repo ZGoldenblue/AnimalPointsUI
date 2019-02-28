@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Authenticator } from 'aws-amplify-react';
 
-class Signin extends Component {
+class SignIn extends Component {
 
     render() {
         if(this.props.user) {
@@ -14,4 +14,4 @@ class Signin extends Component {
     }
 }
 
-export default Signin;
+export default SignIn;

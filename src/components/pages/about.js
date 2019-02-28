@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Alert from 'react-bootstrap/Alert';
 
-class about extends Component {
+class About extends Component {
     render() {
         return (
             <Container>
@@ -13,4 +13,4 @@ class about extends Component {
     }
 }
 
-export default about;
+export default About;

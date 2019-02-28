@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Container from 'react-bootstrap/Container';
 import Alert from 'react-bootstrap/Alert';
 
-class profile extends Component {
+class Profile extends Component {
     render() {
         return (
             <Container>
@@ -13,4 +13,4 @@ class profile extends Component {
     }
 }
 
-export default profile;
+export default Profile;

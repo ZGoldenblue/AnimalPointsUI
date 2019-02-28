@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Route, BrowserRouter} from 'react-router-dom';
 import { Auth, Hub } from 'aws-amplify';
 
-import home from './components/pages/home';
+import Home from './components/pages/Home';
 import Header from './components/Header';
-import about from './components/pages/about';
-import profile from './components/pages/profile';
-import settings from './components/pages/settings';
-import signout from './components/pages/signout';
-import Signin from './components/pages/Signin';
+import About from './components/pages/About';
+import Profile from './components/pages/Profile';
+import Settings from './components/pages/Settings';
+import SignOut from './components/pages/SignOut';
+import SignIn from './components/pages/SignIn';
 
 class App extends Component {
 
@@ -51,12 +51,12 @@ render() {
       <BrowserRouter>
         <div>
           <Route children={<Header user={this.state.user}/>}/>
-          <Route exact path='/' component={home}/>
-          <Route path='/signin' render={() => (<Signin user={this.state.user}/>)}/>
-          <Route path='/about' component={about}/>
-          <Route path='/profile' component={profile}/>
-          <Route path='/settings' component={settings}/>
-          <Route path='/signout' component={signout}/>
+          <Route exact path='/' component={Home}/>
+          <Route path='/signin' render={() => (<SignIn user={this.state.user}/>)}/>
+          <Route path='/about' component={About}/>
+          <Route path='/profile' component={Profile}/>
+          <Route path='/settings' component={Settings}/>
+          <Route path='/signout' component={SignOut}/>
         </div>
       </BrowserRouter>
     );
