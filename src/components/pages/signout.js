@@ -5,8 +5,6 @@ import { Auth } from 'aws-amplify';
 
 class signout extends Component {
 
-
-
     render() {
         Auth.signOut();
         return (

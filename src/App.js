@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { Route, BrowserRouter} from 'react-router-dom';
 import { Auth, Hub } from 'aws-amplify';
@@ -9,7 +8,7 @@ import about from './components/pages/about';
 import profile from './components/pages/profile';
 import settings from './components/pages/settings';
 import signout from './components/pages/signout';
-import signin from './components/pages/signin';
+import Signin from './components/pages/Signin';
 
 class App extends Component {
 
@@ -25,7 +24,6 @@ class App extends Component {
     console.log();
     Auth.currentUserInfo()
     .then((value) => {
-        console.log(value)
         this.setState({user: value})
     });
 }
@@ -48,15 +46,13 @@ class App extends Component {
     }
 }
 
-
-
 render() {
   return (
       <BrowserRouter>
         <div>
           <Route children={<Header user={this.state.user}/>}/>
           <Route exact path='/' component={home}/>
-          <Route path='/signin' render={() => <signin user={this.state.user}/>}/>
+          <Route path='/signin' render={() => (<Signin user={this.state.user}/>)}/>
           <Route path='/about' component={about}/>
           <Route path='/profile' component={profile}/>
           <Route path='/settings' component={settings}/>
